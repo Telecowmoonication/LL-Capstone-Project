@@ -59,7 +59,7 @@ ROOT_URLCONF = 'LittleLemon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,7 +142,7 @@ REST_FRAMEWORK = {
     
     'DEFAULT_FILTER_BACKENDS' : [
         'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.OrderFilter',
+        'rest_framework.filters.OrderingFilter',
         'rest_framework.filters.SearchFilter',
     ],
     
