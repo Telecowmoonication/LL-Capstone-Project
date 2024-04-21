@@ -8,7 +8,7 @@ class Booking(models.Model):
     booking_date = models.DateTimeField()
     
     def __str__(self)-> str:
-        return f"Reservation by {self.name} for {self.no_of_guests}"
+        return f'Reservation by {self.name} for {self.no_of_guests}'
     
     
 class MenuItem(models.Model):
@@ -17,5 +17,8 @@ class MenuItem(models.Model):
     inventory = models.IntegerField(default=0)
     
     def __str__(self)-> str:
-        return self.title
+        return f'{self.title} : {str(self.price)}'
+    
+    def get_item(self):
+        return f'{self.title} : {str(self.price)}'
     
