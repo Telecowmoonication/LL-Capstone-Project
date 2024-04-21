@@ -32,6 +32,7 @@ def msg(request):
 class bookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    permission_classes = [IsAuthenticated]
 
 
 # View type: Class-based(Generic)
