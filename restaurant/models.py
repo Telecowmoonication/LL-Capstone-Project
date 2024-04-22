@@ -16,9 +16,12 @@ class MenuItem(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, db_index=True)
     inventory = models.IntegerField(default=0)
     
+    class Meta:
+        ordering = ['id']  # This ensures the items are always returned in the order of their IDs
+    
     def __str__(self)-> str:
-        return f'{self.title} : {str(self.price)}'
+        return f'{self.title} : {self.price:.2f}' # f-strings already convert to str so didn't include conversion from instructions. :.2f ensures 2 decimal places even with a 0
     
     def get_item(self):
-        return f'{self.title} : {str(self.price)}'
+        return f'{self.title} : {self.price:.2f}' # f-strings already convert to str so didn't include conversion from instructions. :.2f ensures 2 decimal places even with a 0
     
