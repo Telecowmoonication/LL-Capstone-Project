@@ -6,8 +6,8 @@ from restaurant.models import MenuItem
 from restaurant.serializers import MenuItemSerializer
 
 class MenuViewTest(TestCase):
-    
-    def setUp(self):
+    @classmethod
+    def setUpTestData(cls):
         MenuItem.objects.create(title="Lemon Cake", price=3.00, inventory=25)
         MenuItem.objects.create(title="Strawberry Lemonade", price=2.50, inventory= 75)
         
