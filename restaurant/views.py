@@ -7,12 +7,14 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from .models import User, Booking, MenuItem
 from .serializers import UserSerializer, UserRegistrationSerializer, BookingSerializer, MenuItemSerializer
+from datetime import datetime
 
 # Create your views here.
 
 # View type: Function-based
 def index(request):
-    return render(request, 'index.html', {})
+    current_year = datetime.now().year
+    return render(request, 'index.html', {'current_year': current_year})
 
 # View type: Class-based(Viewset)
 class userViewSet(viewsets.ModelViewSet):

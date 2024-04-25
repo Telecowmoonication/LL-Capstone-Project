@@ -2,15 +2,75 @@
 
 {% load static %}
 
-<html>
-    <head>
-        <title>Capstone Project</title>
-        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    </head>
-    <body>
-        <h1 style="text-align: center;">Welcome To Little Lemon Restaurant</h1>
-        <div style="text-align: center;">
-            <img src="{% static 'images/logo.png' %}" alt="Little Lemon Logo">
-        </div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Little Lemon Capstone Project</title>
+    <meta name="description" content="A brief description"/>
+    <meta name="author" content="Based in Meta, Online, Little Lemon is an imagined Lemon-themed restaurant, focused on lemon recipes served with a lot of lemon."/>
+
+    <!-- Load favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
+
+    <!-- CSS files -->
+    <link rel="preload" as="style" href="{% static 'css/style.css' %}" onload="this.rel = 'stylesheet'"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap"/>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/logo.png' %}" alt="Little Lemon Logo"/>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="menu">Menu</a></li>
+            <li><a href="bookings">Book</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id="hero">
+            <h1 class="heading-shadow">SPECIAL OFFER</h1>
+            <p>30% Off This Weekend</p>
+            <a href="bookings" class="cta">Book now</a>
+        </article>
+    </section>
+    <section>
+        <article>
+            <h2>Our New Menu</h2>
+            <img src="{% static 'images/lemon dessert B.jpg' %}" alt="Lemon Dessert"/>
+            <p>Our menu consists of whatever I decided to add while coding. Usually lemony items...</p>
+            <p><a href="menu">See our new menu</a></p>
+        </article>
+        <article>
+            <h2>Book a table</h2>
+            <img src="{% static 'images/restaurant_inside.jpg' %}" alt="Restaurant Inside"/>
+            <p>Reservations preferred, but not necessary as this is a fake restaurant.</p>
+            <p><a href="bookings">Book your table now</a></p>
+        </article>
+        <article>
+            <h2>Hours of Operation</h2>
+            <img src="{% static 'images/mario-and-adrian.jpg' %}" alt="Chef's Working"/>
+            <p>The Little Lemon Restaurant is open 7 days a week, except for public holidays.</p>
+            <ul>
+                <li>Mon - Fri: 2pm - 10pm</li>
+                <li>Sat: 2pm - 11pm</li>
+                <li>Sun: 2pm - 9pm</li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+        <article>
+            <img src="{% static 'images/logo_footer.png' %}" alt="Footer Logo"/>
+        </article>
+        <article>
+            <p>Copyright {{ current_year }} Little Lemon</p>
+        </article>
+    </footer>
+</body>
 </html>

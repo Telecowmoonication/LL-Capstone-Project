@@ -21,7 +21,7 @@ from restaurant.views import userViewSet, bookingViewSet
 
 router = DefaultRouter()
 router.register(r'users', userViewSet, basename='user') # Endpoint: restaurant/users/
-router.register(r'bookings', bookingViewSet, basename='booking') # Endpoint: restaurant/bookings/
+router.register(r'bookings', bookingViewSet, basename='bookings') # Endpoint: restaurant/bookings/
 
 urlpatterns = [
     path('admin/', admin.site.urls),
