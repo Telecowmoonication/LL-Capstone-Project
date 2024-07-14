@@ -2,9 +2,11 @@ from rest_framework import serializers
 from .models import Booking, MenuItem
 from django.contrib.auth.models import User
 
-class UserSerializer(serializers.ModelSerializer):
+# Converts User instances to and from JSON format, making them usable in API endpoints
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
+        # url in fields links to user instance with HyperlinkedModelSerializer
         fields = ['url', 'username', 'email', 'groups']
         
 
